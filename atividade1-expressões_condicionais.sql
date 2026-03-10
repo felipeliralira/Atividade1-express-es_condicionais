@@ -11,4 +11,12 @@ select nome, de_ferias, bairro from tabela_de_vendedores where nome in ('Cláudi
 
 select nome, percentual_comissao, de_ferias from tabela_de_vendedores where percentual_comissao >= 0.10 and de_ferias =1;
 
+# Realize uma consulta na tabela de notas fiscais, identificando o número de matrícula 00237 ou a data de venda do dia 12-01-2015. 
+# Por que o CPF desta tabela não é uma chave primária (PK)?
+
+select * from notas_fiscais where matricula = ('00237');
+
+# O cpf não é uma chave primaria 
+
+
 
