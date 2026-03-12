@@ -18,7 +18,13 @@ select * from notas_fiscais where matricula = ('00237') or data_venda = '2015-01
 
 # O cpf não é uma chave primaria porque ja existe uma chave primaria chamada cpf na tabela de clientes, então a chave para essa tabela é a numero
 
-# Na tabela dos itens das notas fiscais, selecione o código do produto e a quantidade vendida dos itens que possuam quantidade de venda igual ou maior do que 99. Qual ou quais itens representam o maior valor de venda?
+# 4)Na tabela dos itens das notas fiscais, selecione o código do produto
+-- e a quantidade vendida dos itens que possuam quantidade de venda igual ou maior do que 99. 
+-- Qual ou quais itens representam o maior valor de venda?
+
+select preco, codigo_do_produto, quantidade from itens_notas_fiscais where quantidade >= 99 and preco >44;
+select codigo_do_produto, quantidade, (quantidade * preco) as valor_total_venda
+from itens_notas_fiscais where quantidade >= 99 order by valor_total_venda desc limit 1;
 
 
 
